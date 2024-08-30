@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Textarea2 } from "@/components/ui/textarea2";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function Translate() {
   const [text, setText] = useState("");
@@ -47,42 +56,38 @@ export default function Translate() {
     setText(event.target.value);
   };
 
-  const handleChangeOption = (event) => {
-    setOption(event.target.value);
+  const handleChangeOption = (value) => {
+    setOption(value);
   };
 
   return (
     <>
       <div className="justify-center flex mt-5">
-        <button
-          type="button"
-          className="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 mr-3"
-          value="an"
-          onClick={handleChangeOption}
-        >
-          AN
-        </button>
-        <button
-          type="button"
-          className="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 mr-3"
-          value="az"
-          onClick={handleChangeOption}
-        >
-          AZ
-        </button>
-        <button
-          type="button"
-          className="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 mr-3"
-          value="naz"
-          onClick={handleChangeOption}
-        >
-          NAZ
-        </button>
+        <Select onValueChange={handleChangeOption}>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Select a fruit" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Sandi</SelectLabel>
+              <SelectItem value="an">
+                AN
+              </SelectItem>
+              <SelectItem value="az">
+                AZ
+              </SelectItem>
+              <SelectItem value="naz">
+                NAZ
+              </SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
       </div>
       <div className="container justify-center flex mt-8">
         <Textarea className="mr-3" onHandle={handleChange} />
-        <Textarea2 className="ml-3" output={outputText} />
+        <Textarea2 className="ml-3" output={outputText} disabled />
       </div>
+      <p>{option}asd</p>
     </>
   );
 }
