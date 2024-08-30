@@ -87,7 +87,7 @@ export default function Translate() {
         <Textarea className="mr-3" onHandle={handleChange} />
         <Textarea2 className="ml-3" output={outputText} disabled />
       </div>
-      <p>{option}asd</p>
+      {/* <p>{option}asd</p> */}
     </>
   );
 }
