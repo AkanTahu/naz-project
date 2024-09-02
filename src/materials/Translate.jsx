@@ -62,7 +62,7 @@ export default function Translate() {
 
   return (
     <>
-      <div className="justify-center flex mt-5">
+      <div className="font-supreme justify-center flex mt-5">
         <Select onValueChange={handleChangeOption}>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Select a fruit" />
@@ -70,22 +70,22 @@ export default function Translate() {
           <SelectContent>
             <SelectGroup>
               <SelectLabel>Sandi</SelectLabel>
-              <SelectItem value="an">
-                AN
-              </SelectItem>
-              <SelectItem value="az">
-                AZ
-              </SelectItem>
-              <SelectItem value="naz">
-                NAZ
-              </SelectItem>
+              <SelectItem value="an">AN</SelectItem>
+              <SelectItem value="az">AZ</SelectItem>
+              <SelectItem value="naz">NAZ</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
       </div>
       <div className="container justify-center flex mt-8">
-        <Textarea className="mr-3" onHandle={handleChange} />
-        <Textarea2 className="ml-3" output={outputText} disabled />
+        <Textarea
+          className="mr-3 font-supreme font-medium text-3xl"
+          onHandle={handleChange}
+        />
+        <Textarea2
+          className="ml-3 font-supreme font-medium text-3xl"
+          output={outputText}
+        />
       </div>
       {/* <p>{option}asd</p> */}
     </>
