@@ -1,3 +1,13 @@
 button by ibelick
 component by shadcn
 credit qoiz
+
+      {showAlert && (
+        <Alert className="absolute top-4 right-24">
+          <Terminal />
+          <AlertTitle>Alert!</AlertTitle>
+          <AlertDescription>
+            Text copied to clipboard successfully!
+          </AlertDescription>
+        </Alert>
+      )}

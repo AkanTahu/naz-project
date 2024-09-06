@@ -1,20 +1,21 @@
 import React, { useState } from "react";
-import { Terminal } from "lucide-react"
+import { Terminal } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// import { motion } from "framer-motion"
+// import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const Textarea2 = React.forwardRef(({ className, output }, ref) => {
   const [showAlert, setShowAlert] = useState(false);
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(output);
-    setShowAlert(true);
-    // setTimeout(() => {
-    //   setShowAlert(false);
-    // }, 5000); // Hide the alert after 3 seconds
-  };
+  // const handleCopy = () => {
+  //   navigator.clipboard.writeText(output);
+  //   setShowAlert(true);
+  //   setTimeout(() => {
+  //     setShowAlert(false);
+  //   }, 5000); // Hide the alert after 3 seconds
+  // };
   return (
     <>
       <textarea
@@ -28,19 +29,16 @@ const Textarea2 = React.forwardRef(({ className, output }, ref) => {
       />
       <button
         className="absolute group inline-flex h-12 items-center right-28 overflow-hidden rounded-md border border-neutral-200 bg-transparent px-4 mt-2 font-medium text-neutral-600 transition-all duration-100 [box-shadow:5px_5px_rgb(82_82_82)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(82_82_82)]"
-        onClick={handleCopy}
+        onClick={() => {
+          toast('Tersalin 😄selamat menyalin 😎',{
+            autoClose: 2000,
+            hideProgressBar: true,
+          });
+        }}
       >
         Copy
       </button>
-      {showAlert && (
-        <Alert className="absolute bottom-4">
-          <Terminal />
-          <AlertTitle>Alert!</AlertTitle>
-          <AlertDescription>
-            Text copied to clipboard successfully!
-          </AlertDescription>
-        </Alert>
-      )}
+      <ToastContainer/>
     </>
   );
 });
