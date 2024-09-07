@@ -11,10 +11,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export default function Translate() {
+export default function Translate({ onHandleLang, ...props }) {
   const [text, setText] = useState("");
   const [outputText, setOutputText] = useState("");
   const [option, setOption] = useState("");
+  const [dataLang, setDataLang] = useState("");
 
   const workAN = (text) => {
     return text.replace(/[A-Za-z]/g, (char) => {
@@ -60,13 +61,27 @@ export default function Translate() {
     setOption(value);
   };
 
+  const sendLang = (event) => {
+    onHandleLang(event.target.value);
+  };
+
+  function isLangSelect() {
+    try {
+      if (props.changeLang == "1") {
+        return <SelectValue placeholder="Pilih Sandi" />;
+      } else {
+        return <SelectValue placeholder="Select Code" />;
+      }
+    } catch (error) {
+      
+    }
+  }
+
   return (
     <>
       <div className="font-supreme justify-center flex mt-5">
         <Select onValueChange={handleChangeOption}>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Pilih Sandi" />
-          </SelectTrigger>
+          <SelectTrigger className="w-[180px]">{isLangSelect()}</SelectTrigger>
           <SelectContent>
             <SelectGroup>
               <SelectLabel>Sandi</SelectLabel>
@@ -76,11 +91,30 @@ export default function Translate() {
             </SelectGroup>
           </SelectContent>
         </Select>
+        <div className="flex ml-3 gap-3">
+          <button
+            className="group relative inline-flex h-9 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-transparent px-6 font-supreme dark:bg-slate-950  transition-all [box-shadow:0px_4px_1px_#020617] active:translate-y-[2px] active:shadow-none"
+            value={"1"}
+            onChange={(e) => setDataLang(e.target.value)}
+            onClick={sendLang}
+          >
+            IND
+          </button>
+          <button
+            className="group relative inline-flex h-9 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-transparent px-6 font-supreme dark:bg-slate-950  transition-all [box-shadow:0px_4px_1px_#020617] active:translate-y-[2px] active:shadow-none"
+            value={"2"}
+            onChange={(e) => setDataLang(e.target.value)}
+            onClick={sendLang}
+          >
+            EN
+          </button>
+        </div>
       </div>
       <div className="container justify-center flex px-24 mt-8">
         <Textarea
           className="mr-3 font-supreme font-medium text-2xl"
           onHandle={handleChange}
+          changeLang={props.changeLang}
         />
         <Textarea2
           className="ml-3 font-supreme font-medium text-2xl"

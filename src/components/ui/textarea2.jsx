@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 // import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const Textarea2 = React.forwardRef(({ className, output }, ref) => {
-  const [showAlert, setShowAlert] = useState(false);
+  // const [showAlert, setShowAlert] = useState(false);
 
   // const handleCopy = () => {
   //   navigator.clipboard.writeText(output);
@@ -30,6 +30,7 @@ const Textarea2 = React.forwardRef(({ className, output }, ref) => {
       <button
         className="absolute group inline-flex h-12 items-center right-28 overflow-hidden rounded-md border border-neutral-200 bg-transparent px-4 mt-2 font-medium text-neutral-600 transition-all duration-100 [box-shadow:5px_5px_rgb(82_82_82)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(82_82_82)]"
         onClick={() => {
+          navigator.clipboard.writeText(output),
           toast('Tersalin 😄selamat menyalin 😎',{
             autoClose: 2000,
             hideProgressBar: true,

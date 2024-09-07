@@ -5,19 +5,23 @@ import Explanation from "./materials/Explanation";
 import Footer from "./materials/Footer";
 
 export default function App() {
+  const [lang, setLang] = useState("1");
+
+  function handleLang(data) {
+    setLang(data);
+  }
+
+
   return (
     <div className="relative min-h-screen bg-cover bg-center bg-[url('/public/doodle.jpg')]">
-      {/* Overlay with opacity */}
-      <div className="absolute inset-0 bg-white bg-opacity-80"></div>
+      <div className="absolute inset-0 bg-white bg-opacity-85"></div>
 
-      {/* Content */}
       <div className="relative">
-        <Header />
-        <Translate />
-        <Explanation />
+        <Header changeLang={lang} />
+        <Translate onHandleLang={handleLang} changeLang={lang}  />
+        <Explanation changeLang={lang}/>
         <Footer />
       </div>
     </div>
   );
 }
-
