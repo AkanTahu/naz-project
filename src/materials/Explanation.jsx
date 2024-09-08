@@ -9,7 +9,7 @@ export default function Explanation(props) {
           <h1 className="text-3xl font-supreme font-black text-center">
             Penjelasan📜
           </h1>
-          <h3 className="font-supreme mt-3 text-lg px-44 text-center">
+          <h3 className="font-supreme mt-3 text-lg px-[2px] md:px-30 lg:px-32 text-center">
             Pasti kalian disaat masa kecil pernah bermain sandi atau
             kode-kodean. Kalian setidaknya pernah liat atau tau disaat pelajaran
             pramuka SD atau SMP. Sandi yang mudah digunakan adalah sandi{" "}
@@ -20,14 +20,22 @@ export default function Explanation(props) {
             bagaimana kalau sandi <span className="font-black">NAZ</span> ?, ada
             yang bisa nebak bagaimana memecahkannya wkwk.
           </h3>
-          <div className="flex justify-center mt-3 mb-10">
-            <img src="../public/AN.png" alt="" className="w-2/5 mr-2" />
-            <img src="../public/AZ.png" alt="" className="w-2/5 ml-2" />
+          <div className="grid justify-items-center static md:flex md:justify-center mt-3 mb-10">
+            <img
+              src="../public/AN.png"
+              alt=""
+              className="w-full md:w-2/5 mr-0 mr:mr-2"
+            />
+            <img
+              src="../public/AZ.png"
+              alt=""
+              className="w-full md:w-2/5 ml-0 md:ml-2 mt-5 md:mt-0"
+            />
           </div>
           <h1 className="text-3xl font-supreme font-black text-center">
             Tentang🥽
           </h1>
-          <h3 className="font-supreme mt-3 text-lg px-44 text-center">
+          <h3 className="font-supreme mt-3 text-lg px-[2px] md:px-30 lg:px-32 text-center">
             Aku membuat website translate sandi ini karena aku suka membuat
             surat bersandi dan suka membagikannya ke teman-teman aku hehe.
             Website ini terinspirasi dari project github{" "}
@@ -47,7 +55,7 @@ export default function Explanation(props) {
           <h1 className="text-3xl font-supreme font-black text-center">
             Explanation📜
           </h1>
-          <h3 className="font-supreme mt-3 text-lg px-44 text-center">
+          <h3 className="font-supreme mt-3 text-lg px-[2px] md:px-30 lg:px-32 text-center">
             Surely you have played ciphers or codes as a child. You have at
             least seen or know during elementary or junior high scout lessons.
             Codes that are easy to use are{" "}
@@ -58,14 +66,22 @@ export default function Explanation(props) {
             <span className="font-black">NAZ</span> ?,anyone can guess how to
             solve it haha.
           </h3>
-          <div className="flex justify-center mt-3 mb-10">
-            <img src="../public/AN.png" alt="" className="w-2/5 mr-2" />
-            <img src="../public/AZ.png" alt="" className="w-2/5 ml-2" />
+          <div className="grid justify-items-center static md:flex md:justify-center mt-3 mb-10">
+            <img
+              src="../public/AN.png"
+              alt=""
+              className="w-full md:w-2/5 mr-0 mr:mr-2"
+            />
+            <img
+              src="../public/AZ.png"
+              alt=""
+              className="w-full md:w-2/5 ml-0 md:ml-2 mt-5 md:mt-0"
+            />
           </div>
           <h1 className="text-3xl font-supreme font-black text-center">
             About🥽
           </h1>
-          <h3 className="font-supreme mt-3 text-lg px-44 text-center">
+          <h3 className="font-supreme mt-3 text-lg px-[2px] md:px-30 lg:px-32 text-center">
             I created this code translation website because I like to make
             encrypted letters and like to share them with my friends hehe. This
             website was inspired by the github project{" "}

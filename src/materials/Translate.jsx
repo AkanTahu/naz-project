@@ -10,6 +10,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Translate({ onHandleLang, ...props }) {
   const [text, setText] = useState("");
@@ -72,14 +74,50 @@ export default function Translate({ onHandleLang, ...props }) {
       } else {
         return <SelectValue placeholder="Select Code" />;
       }
-    } catch (error) {
-      
-    }
+    } catch (error) {}
+  }
+
+  function toastLang() {
+    try {
+      if (props.changeLang == "1") {
+        return (
+          <button
+            className="absolute  inline-flex h-9 md:h-12 items-center top-[360px] md:top-[170px] right-8 md:right-28 overflow-hidden rounded-md border border-neutral-200 bg-transparent px-4 mt-2 font-medium text-neutral-600 transition-all duration-100 [box-shadow:5px_5px_rgb(82_82_82)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(82_82_82)]"
+            onClick={() => {
+              navigator.clipboard.writeText(outputText),
+                toast("Tersalin 😄selamat menyalin 😎", {
+                  autoClose: 2000,
+                  hideProgressBar: true,
+                  position: "top-center",
+                });
+            }}
+          >
+            Copy
+          </button>
+        );
+      } else {
+        return (
+          <button
+            className="absolute  inline-flex h-9 md:h-12 items-center top-[360px] md:top-[170px] right-8 md:right-28 overflow-hidden rounded-md border border-neutral-200 bg-transparent px-4 mt-2 font-medium text-neutral-600 transition-all duration-100 [box-shadow:5px_5px_rgb(82_82_82)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(82_82_82)]"
+            onClick={() => {
+              navigator.clipboard.writeText(outputText),
+                toast("Copied 😄happy copying 😎", {
+                  autoClose: 2000,
+                  hideProgressBar: true,
+                  position: "top-center",
+                });
+            }}
+          >
+            Copy
+          </button>
+        );
+      }
+    } catch (error) {}
   }
 
   return (
     <>
-      <div className="font-supreme justify-center flex mt-5">
+      <div className="font-supreme grid justify-items-center md:justify-center  md:flex mt-5">
         <Select onValueChange={handleChangeOption}>
           <SelectTrigger className="w-[180px]">{isLangSelect()}</SelectTrigger>
           <SelectContent>
@@ -91,7 +129,7 @@ export default function Translate({ onHandleLang, ...props }) {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <div className="flex ml-3 gap-3">
+        <div className="flex ml-0 mt-3  md:mt-0 md:ml-3 gap-3">
           <button
             className="group relative inline-flex h-9 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-transparent px-6 font-supreme dark:bg-slate-950  transition-all [box-shadow:0px_4px_1px_#020617] active:translate-y-[2px] active:shadow-none"
             value={"1"}
@@ -110,17 +148,19 @@ export default function Translate({ onHandleLang, ...props }) {
           </button>
         </div>
       </div>
-      <div className="container justify-center flex px-24 mt-8">
+      <div className="container block md:justify-center md:flex px-5 md:px-24 mt-8">
         <Textarea
-          className="mr-3 font-supreme font-medium text-2xl"
+          className="mr-0 md:mr-3 w-full md:w-1/2 min-h-32 md:min-h-52 font-supreme font-medium text-lg md:text-2xl"
           onHandle={handleChange}
           changeLang={props.changeLang}
         />
         <Textarea2
-          className="ml-3 font-supreme font-medium text-2xl"
+          className="mt-5 md:mt-0 ml-0 md:ml-3 w-full md:w-1/2 min-h-32 md:min-h-52 font-supreme font-medium text-2xl"
           output={outputText}
           disabled
         />
+        {toastLang()},
+        <ToastContainer className="w-full text-center md:w-[312px]" />
       </div>
     </>
   );

@@ -13,7 +13,7 @@ export default function App() {
 
 
   return (
-    <div className="relative min-h-screen bg-cover bg-center bg-[url('/public/doodle.jpg')]">
+    <div className="relative min-h-screen bg-contain md:bg-cover bg-center bg-[url('/public/doodle.jpg')]">
       <div className="absolute inset-0 bg-white bg-opacity-85"></div>
 
       <div className="relative">

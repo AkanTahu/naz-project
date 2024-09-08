@@ -12,7 +12,7 @@ export default function Header(props) {
     } else {
       return (
         <h1 className="text-3xl font-supreme font-black text-center">
-          Translate Code😁
+          Code Translator😁
         </h1>
       )
     }

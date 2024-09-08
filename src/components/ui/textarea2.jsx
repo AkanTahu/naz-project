@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Terminal } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 // import { motion } from "framer-motion"
 // import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
@@ -27,19 +25,6 @@ const Textarea2 = React.forwardRef(({ className, output }, ref) => {
         type="text"
         placeholder={output}
       />
-      <button
-        className="absolute group inline-flex h-12 items-center right-28 overflow-hidden rounded-md border border-neutral-200 bg-transparent px-4 mt-2 font-medium text-neutral-600 transition-all duration-100 [box-shadow:5px_5px_rgb(82_82_82)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(82_82_82)]"
-        onClick={() => {
-          navigator.clipboard.writeText(output),
-          toast('Tersalin 😄selamat menyalin 😎',{
-            autoClose: 2000,
-            hideProgressBar: true,
-          });
-        }}
-      >
-        Copy
-      </button>
-      <ToastContainer/>
     </>
   );
 });
