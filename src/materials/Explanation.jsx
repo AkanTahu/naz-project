@@ -1,5 +1,7 @@
 import React from "react";
 import "../App.css";
+import imgAN from "./AN.png"
+import imgAZ from "./AZ.png"
 
 export default function Explanation(props) {
   function isLang() {
@@ -22,12 +24,12 @@ export default function Explanation(props) {
           </h3>
           <div className="grid justify-items-center static md:flex md:justify-center mt-3 mb-10">
             <img
-              src="../public/AN.png"
+              src={imgAN}
               alt=""
               className="w-full md:w-2/5 mr-0 mr:mr-2"
             />
             <img
-              src="../public/AZ.png"
+              src={imgAZ}
               alt=""
               className="w-full md:w-2/5 ml-0 md:ml-2 mt-5 md:mt-0"
             />
@@ -68,12 +70,12 @@ export default function Explanation(props) {
           </h3>
           <div className="grid justify-items-center static md:flex md:justify-center mt-3 mb-10">
             <img
-              src="../public/AN.png"
+              src={imgAN}
               alt=""
               className="w-full md:w-2/5 mr-0 mr:mr-2"
             />
             <img
-              src="../public/AZ.png"
+              src={imgAZ}
               alt=""
               className="w-full md:w-2/5 ml-0 md:ml-2 mt-5 md:mt-0"
             />
